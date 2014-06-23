@@ -6,12 +6,13 @@ class ArticlesController < ApplicationController
 		#render plain: params[:article].inspect
 		#@title=params[:article][:title]
 		 @article = Article.new(article_params)
-		 
 		  if @article.save
 		      redirect_to @article
-		  else
-		      render new_article_path
-		      #redirect_to 'new'
+		  else                                                                       
+		      #render new_article_path
+		      #redirect_to new_article_path
+		      redirect_to 'welcome/index'
+		      #render 'new'
 		  end
 	end
 
@@ -20,7 +21,8 @@ class ArticlesController < ApplicationController
 	end	 
 	
 	def index
-	  @articles = Article.all
+		@articles = Article.all
+	  render :template => 'welcome/index'
 	end
 
 	def edit
@@ -28,7 +30,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def update
-	  @article = Article.find(params[:id])
+	  @article = Article.find_by(title: params[:title])
 	 
 	  if @article.update(article_params)
 	    redirect_to @article
