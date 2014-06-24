@@ -1,6 +1,9 @@
 class ArticlesController < ApplicationController
 	def new
 		@article = Article.new
+		#article.fact_no = 5
+		#@factorial = article.factorial
+		#render 'facts/facts_view', :locals => { :result1 => @factorial, :result2 => Article.new.factorial_parameter(5)  }
 	end
 	def create
 		#render plain: params[:article].inspect
@@ -22,7 +25,8 @@ class ArticlesController < ApplicationController
 	
 	def index
 		@articles = Article.all
-	  render :template => 'welcome/index'
+		#render partial:'partial'
+	  #render :template => 'welcome/index'
 	end
 
 	def edit
