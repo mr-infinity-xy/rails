@@ -1,0 +1,8 @@
+.article-title
+  = @article.title
+.article-text  
+  = @article.text
+.article-option
+=> link_to 'Back', articles_path, class: 'arrow-link'
+| &nbsp;&nbsp;
+= link_to 'Edit', edit_article_path(@article), class: 'arrow-link'

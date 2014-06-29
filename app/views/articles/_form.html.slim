@@ -1,0 +1,25 @@
+= form_for @article do |f|
+  /! or we can directly write form_for @article or form_for Article.new
+  - if @article.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@article.errors.count, "error")
+        | prohibited this article from being saved:
+      ul
+        - @article.errors.full_messages.each do |msg|
+          li= msg
+  p
+    = f.label :title
+    br/
+    = f.text_field :title, placeholder: 'Please enter descriptive title'
+  p
+    = f.label :text
+    br/
+    = f.text_area :text, placeholder: 'Please enter some details about the title'
+  p
+    = f.label :tag
+    br/
+    = f.text_field :tag, placeholder: 'please enter tage seprated by commas'
+  p
+    = f.submit class: 'btn btn-green small-btn'
+  = link_to 'Back', articles_path, class: 'arrow-link'

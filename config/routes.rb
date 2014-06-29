@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'articles#index'
    
-   resources :articles, param: :title     #param title is used to send title='' instead of id='' which is the default. Though it doesn't change RHS of hash , which is still valid id. It can be changed by to_param method in article
+   resources :articles  # param: :title   param title is used to send title='' instead of id='' which is the default. Though it doesn't change RHS of hash , which is still valid id. It can be changed by to_param method in article
    get 'facts' => 'facts#facts_view'
+   get 'find_multiple' => 'articles#find_multiple'
+   post 'search' => 'articles#search'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

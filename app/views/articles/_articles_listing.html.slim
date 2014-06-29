@@ -1,0 +1,22 @@
+- if @articles.count == 0
+   | No article found
+-else
+    - @articles.each do |article|
+      .article-wrapper
+        .article-title
+            = link_to article.title, article_path(article)
+        .article-text
+            -if article.text.length > 200
+              =article.text[0..200] 
+              | &nbsp;  .....
+            -else
+              =article.text
+
+        .article-options
+          => link_to 'Read More', article_path(article), class: 'arrow-link'
+          | &nbsp; &nbsp;
+          => link_to :Delete, article_path(article), method: :Delete, class: 'arrow-link'
+          | &nbsp; &nbsp;
+          => link_to :Update, edit_article_path(article), class: 'arrow-link'
+          | &nbsp; &nbsp;
+    
