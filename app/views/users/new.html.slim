@@ -1,0 +1,29 @@
+h2  Get started with registration
+- if @user.errors.any?
+	#error-explanation
+	  h2
+	    = pluralize(@user.errors.count, "error")
+	    | &nbsp;prohibited this article from being saved:
+	  ul
+	    - @user.errors.full_messages.each do |msg|
+	      li= msg
+= form_for @user do|f|
+	table
+		tr
+			td =f.label :first_name, 'First Name:'
+			td =f.text_field :first_name
+		tr
+			td =f.label :last_name, 'Last Name:'
+			td =f.text_field :last_name 
+		tr
+			td =f.label :email_id, 'Email id:'
+			td =f.text_field :email_id 	
+		tr
+			td =f.label :password, 'Password:'
+			td =f.password_field :password
+		tr	
+			td =f.label :password_confirmation, 'Confirm password:' 
+			td =f.password_field :password_confirmation 
+		tr
+			td 
+			td =f.submit 'Register', class:'btn btn-green btn-small'

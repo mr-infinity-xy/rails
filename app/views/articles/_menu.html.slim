@@ -11,9 +11,9 @@
 				= link_to 'NEW ARTICLES', new_article_path
 			
 			li.menu-li id = 'register' 
-			  = link_to 'REGISTER', articles_path
+			  = link_to 'REGISTER', new_user_path
 				
 		#search-div   		
 		  => form_tag( { controller: "articles", action: "search" }, method: "post", id: "search-form") 
 			  = text_field_tag :search, nil, placeholder: 'Search Article'	
-			  = submit_tag	:Search, class: 'btn btn-green small-btn'
+			  = submit_tag	:Search, class: 'btn btn-green btn-small'
