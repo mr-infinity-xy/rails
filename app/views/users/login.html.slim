@@ -1,0 +1,15 @@
+-if defined? error
+	#error-explanation 
+		= error
+= form_tag 'login_process', class: 'new_user' 
+	table
+		tr
+			td = label :email_id, 'Email id:' 
+			td = text_field_tag :email_id
+		tr
+			td = label :password, 'Password:'
+			td = password_field_tag :password
+		tr
+			td
+			td = submit_tag 'Login', class: 'btn btn-green btn-small'	
+

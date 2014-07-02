@@ -10,9 +10,15 @@
 			li.menu-li id = 'new-article' 
 				= link_to 'NEW ARTICLES', new_article_path
 			
-			li.menu-li id = 'register' 
-			  = link_to 'REGISTER', new_user_path
-				
+			-if session[:user_id].blank?
+				li.menu-li id = 'register' 
+				  = link_to 'REGISTER', new_user_path
+				li.menu-li id = 'Login' 
+				  = link_to 'Login', controller: 'users', action: 'login'
+			-else
+				li.menu-li id = 'welcome' 
+				  = link_to 'My Area', new_user_path
+
 		#search-div   		
 		  => form_tag( { controller: "articles", action: "search" }, method: "post", id: "search-form") 
 			  = text_field_tag :search, nil, placeholder: 'Search Article'	

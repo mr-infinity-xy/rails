@@ -9,10 +9,10 @@ Rails.application.routes.draw do
    
    resources :articles  # param: :title   param title is used to send title='' instead of id='' which is the default. Though it doesn't change RHS of hash , which is still valid id. It can be changed by to_param method in article
    resources :users
-   get 'facts' => 'facts#facts_view'
    get 'find_multiple' => 'articles#find_multiple'
    post 'search' => 'articles#search'
-
+   get 'login' => 'users#login'
+   post 'login_process' => 'users#login_process'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
