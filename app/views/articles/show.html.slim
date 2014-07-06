@@ -6,3 +6,7 @@
 => link_to 'Back', articles_path, class: 'arrow-link'
 | &nbsp;&nbsp;
 = link_to 'Edit', edit_article_path(@article), class: 'arrow-link'
+#comment-wrapper
+	| Comments
+	= render 'comments/form'
+	=render @article.comments.reject(&:new_record?)

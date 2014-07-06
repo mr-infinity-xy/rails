@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'comments/new'
+
+  get 'comments/create'
+
   #get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -7,8 +11,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'articles#index'
    
-   resources :articles  # param: :title   param title is used to send title='' instead of id='' which is the default. Though it doesn't change RHS of hash , which is still valid id. It can be changed by to_param method in article
+   resources :articles do  # param: :title   param title is used to send title='' instead of id='' which is the default. Though it doesn't change RHS of hash , which is still valid id. It can be changed by to_param method in article
+    resources :comments, only: [:create]
+   end
    resources :users
+   resources :comments
    get 'find_multiple' => 'articles#find_multiple'
    post 'search' => 'articles#search'
    get 'login' => 'users#login'

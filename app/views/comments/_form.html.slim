@@ -1,0 +1,3 @@
+= form_for ([@article, @article.comments.build]) do |f|
+	= f.text_field :text
+	= f.submit 'comment', class: 'comment-submit btn btn-green btn-small' 

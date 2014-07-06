@@ -1,6 +1,7 @@
 class Article < ActiveRecord::Base
   belongs_to :user
-    validates :title, presence: true, length: { minimum: 10 }
+  has_many :comments
+    validates :title, presence: true, length: { minimum: 1 }
   attr_accessor :fact_no
 
   def factorial

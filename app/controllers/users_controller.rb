@@ -25,7 +25,6 @@ class UsersController < ApplicationController
 			session[:user_id] = user.id
 			session[:email_id] = user.email_id
 			session[:first_name] = user.first_name
-			session.delete(:user_id)
 			redirect_to controller: 'articles', action: 'index'
 		end
 	end
