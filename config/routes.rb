@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'forms/form'
+
   get 'comments/new'
 
   get 'comments/create'
@@ -20,6 +22,8 @@ Rails.application.routes.draw do
    post 'search' => 'articles#search'
    get 'login' => 'users#login'
    post 'login_process' => 'users#login_process'
+   get 'form' => 'forms#form' 
+   post 'process_form' => 'forms#process_form' 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

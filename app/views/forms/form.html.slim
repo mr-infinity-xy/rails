@@ -1,0 +1,94 @@
+h4 First parameter always specifies name and id then generally html attributes are followed in hash
+= form_tag process_form_path, multipart: true,  class: 'form' 
+	table border=2 style ='width: 96%; position:absolute; left: 2%; border-collapse:collapse'
+		tr
+			th Method Signature
+			th Code
+			th html
+			th result
+		tr
+			td text_field_tag(name, value = nil, options = {})  
+			td text_field_tag :name, 'Default', id: 'name_field', class: 'text_field'
+			td &lt; input type="text" value="Default" name="name" id="name_field" class="text_field" &gt;
+			td	= text_field_tag :name, 'Default', id: 'name_field', class: 'text_field'
+		tr
+			td  button_tag(content_or_options = nil, options = nil, &block)
+			td  button_tag(type: 'button') {content_tag(:strong, 'Ask me!')}
+			td	&lt; input type="text" value="Default" name="name" id="name_field" class="text_field" &gt;
+			td	= button_tag(type: 'button') { content_tag(:strong, 'Ask me!') }
+		tr
+			td  button_tag(content_or_options = nil, options = nil, &block)
+			td  button_tag('delete', data: { confirm: 'content' })
+			td	&lt; button type="submit" name="button" data-confirm="content" &lt; delete &lt; /button &gt;
+			td	= button_tag('delete', data: { confirm: 'content' })
+		tr
+			td  button_tag(content_or_options = nil, options = nil, &block)
+			td  button_tag
+			td	&lt; button type="submit" name="button"&gt; Button &lt; /button &gt;
+			td	= button_tag
+		tr
+			td    check_box_tag(name, value = "1", checked = false, options = {}) 
+			td    check_box_tag 'education[]', 'SSC'
+			td		&lt;input type="checkbox" value="SSC" name="education[]" id="education_"&gt;
+			td	= check_box_tag 'education[]', 'SSC'
+		tr
+			td    check_box_tag(name, value = "1", checked = false, options = {}) 
+			td    check_box_tag 'education[name]', 'HSC', true, class: 'checkbox_class', disabled: true
+			td	  &lt;input type="checkbox" value="HSC" name="education[name]" id="education_name" disabled="disabled" class="checkbox_class" checked="checked"&gt;
+			td	= check_box_tag 'education[name]', 'HSC', true, class: 'checkbox_class', disabled: true
+
+		tr
+			td  color_field_tag(name, value = nil, options = {}) 
+			td  color_field_tag :color_tag, '#ffffff'
+			td	&lt;input type="color" value="#ffffff" name="color_tag" id="color_tag"&gt;
+			td	= color_field_tag :color_tag, '#ffffff'
+		tr
+			td    date_field_tag(name, value = nil, options = {}) 
+			td  	date_field_tag :date_tag
+			td	  &lt;input type="date" name="date_tag" id="date_tag"&gt;
+			td	= date_field_tag :date_tag
+		tr
+			td 		email_field_tag(name, value = nil, options = {}) 
+			td    email_field_tag :email
+			td	  &lt;input type="email" name="email" id="email"&gt;
+			td	= email_field_tag :email
+		tr
+			td    file_field_tag(name, options = {}) 
+			td  	file_field_tag :file, ccept: 'image/png,image/gif,image/jpeg', class: :upload
+			td	  &lt;input type="file" name="file" id="file" class="upload" ccept="image/png,image/gif,image/jpeg"&gt;
+			td	= file_field_tag :file, ccept: 'image/png,image/gif,image/jpeg', class: :upload
+		tr
+			td    hidden_field_tag(name, value = nil, options = {}) 
+			td 		hidden_field_tag :hidden_text
+			td	  &lt;input id="hidden_text" type="hidden" name="hidden_text"&gt;
+			td	= hidden_field_tag :hidden_text
+		tr
+			td    month_field_tag(name, value = nil, options = {}) 
+			td    month_field_tag :month
+			td		&lt;input type="month" name="month" id="month"&gt;
+			td	= month_field_tag :month
+		tr
+			td    number_field_tag(name, value = nil, options = {}) 
+			td    number_field_tag :number, 10, min: 10, max:20, step: 2
+			td	  &lt;input type="number" value="10" step="2" name="number" min="10" max="20" id="number"&gt;
+			td	= number_field_tag :number, 10, min: 10, max:20, step: 2
+		tr
+			td    password_field_tag(name = "password", value = nil, options = {}) 
+			td    password_field_tag :password, nil, maxlength: 1, size: 10
+			td	  &lt;input type="password" size="10" name="password" maxlength="1" id="password"&gt;
+			td	= password_field_tag :password, nil, maxlength: 1, size: 10
+		tr
+			td    radio_button_tag(name, value, checked = false, options = {}) 
+			td    radio_button_tag :sex, 'male', true
+			td	  &lt;input type="radio" value="male" name="sex" id="sex_male" checked="checked"&gt;
+			td	= radio_button_tag :sex, 'male', true
+		tr
+			td    radio_button_tag(name, value, checked = false, options = {}) 
+			td    radio_button_tag :sex, 'female'
+			td	  &lt;input type="radio" value="male" name="sex" id="sex_female"&gt;
+			td	= radio_button_tag :sex, 'female'
+		tr
+			td    range_field_tag(name, value = nil, options = {}) 
+			td    range_field_tag :range, 12 , min:10, max:20, step:2
+			td	  &lt;input type="range" value="12" step="2" name="range" min="10" max="20" id="range"&gt;
+			td	= range_field_tag :range, 12 , min:10, max:20, step:2
