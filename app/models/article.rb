@@ -1,8 +1,15 @@
 class Article < ActiveRecord::Base
   belongs_to :user
   has_many :comments
-    validates :title, presence: true, length: { minimum: 1 }
   attr_accessor :fact_no
+  validates :title, presence: true, title: {message: "can't be less then 10 characters"}
+  validate :check_text
+
+  def check_text
+    if text.length < 100
+      errors[:base] << "Text should be more then 100 characters"
+    end  
+  end
 
   def factorial
     sum = 1

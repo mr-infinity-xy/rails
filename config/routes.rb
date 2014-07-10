@@ -24,6 +24,7 @@ Rails.application.routes.draw do
    post 'login_process' => 'users#login_process'
    get 'form' => 'forms#form' 
    post 'process_form' => 'forms#process_form' 
+   get 'callbacks' => 'forms#callbacks'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
