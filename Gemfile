@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'ckeditor'
 gem 'slim'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'

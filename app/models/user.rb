@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
 	validates :first_name, :last_name, length: { minimum: 3 }
 	validates :password, length: { minimum: 5 }, confirmation: true
 	validates :email_id,  format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+	cattr_accessor :country_list
+	@@country_list = ['India','Pakistan','Bhutan','Nepal','Srilanka']
 end

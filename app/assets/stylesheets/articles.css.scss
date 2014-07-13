@@ -12,7 +12,7 @@
 #article_title, #article_text, #article_tag
 {
   border: 1px solid #ddd;
-	width: 450px;
+	width: 790px;
 	padding: 5px;
 }
 #article_title
@@ -50,7 +50,10 @@
 	background-color: #ffe;
 	margin-top: 20px;
 }
-
+#cke_article_text
+{
+	width: 800px;
+}
 
 
 

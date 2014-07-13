@@ -22,9 +22,9 @@ body
 .main_heading
 {
 	font-family: 'Roboto Slab', serif;
-	font-size:20px;
+	font-size:22px;
 }
-body,ul
+body
 {
 	padding:0;
 	margin:0
@@ -79,6 +79,8 @@ body,ul
 {
 	list-style: none;
 	display: inline-block;
+	padding:0;
+	margin:0
 }
 .menu-li
 {

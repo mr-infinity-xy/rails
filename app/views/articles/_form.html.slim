@@ -15,11 +15,11 @@
   p
     = f.label :text
     br/
-    = f.text_area :text, placeholder: 'Please enter some details about the title'
+    = f.cktext_area :text, :cols => 20, :ckeditor => {:uiColor => '#eeeeee', :toolbar => 'mystyle'}
   p
     = f.label :tag
     br/
-    = f.text_field :tag, placeholder: 'please enter tage seprated by commas'
+    = f.text_field :tag, placeholder: 'please enter tage seprated by commas' 
   p
     = f.submit class: 'btn btn-green btn-small'
   = link_to 'Back', articles_path, class: 'arrow-link'

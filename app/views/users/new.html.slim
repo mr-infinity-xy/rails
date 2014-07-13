@@ -25,5 +25,8 @@ h2  Get started with registration
 			td =f.label :password_confirmation, 'Confirm password:' 
 			td =f.password_field :password_confirmation 
 		tr
+			td = f.label :country, 'Country'
+			td = f.select(:country, User.country_list.map{ |c| c }, selected: 'Bhutan')
+		tr
 			td 
 			td =f.submit 'Register', class:'btn btn-green btn-small'

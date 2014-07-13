@@ -1,0 +1,7 @@
+= form_tag( { controller: "forms", action: "test_process" }, method: "post") 
+	= check_box_tag :check1
+	= check_box_tag :check2, :ssc, :checked
+	= text_field_tag 'education[ssc][board]'
+	= text_field_tag 'education[ssc][school]'
+	= text_field_tag 'education[hsc]'
+	= submit_tag :Submit
