@@ -1,7 +1,7 @@
 .article-title
   = @article.title
 .article-text  
-  = @article.text.html_safe
+  = sanitize @article.text
 .article-option
 => link_to 'Back', articles_path, class: 'arrow-link'
 | &nbsp;&nbsp;

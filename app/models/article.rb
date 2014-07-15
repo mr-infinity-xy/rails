@@ -4,7 +4,7 @@ class Article < ActiveRecord::Base
   attr_accessor :fact_no
   validates :title, presence: true, title: {message: "can't be less then 10 characters"}
   validate :check_text
-
+  scope :search, ->(data) { where("lower(title) like :text",{ text: "#{data.downcase}%" }) }
   def check_text
     if text.length < 100
       errors[:base] << "Text should be more then 100 characters"

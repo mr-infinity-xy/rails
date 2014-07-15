@@ -26,6 +26,7 @@ Rails.application.routes.draw do
    post 'process_form' => 'forms#process_form' 
    get 'test_form' => 'forms#test_form'
    post 'test_process' => 'forms#test_process'
+   get 'auto_suggest' => 'articles#auto_suggest'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

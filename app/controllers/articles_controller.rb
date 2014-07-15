@@ -1,8 +1,17 @@
 class ArticlesController < ApplicationController
 	def search
-		@articles = Article.where("title like :text",{text: "#{params['search']}%"}).limit(10)
+		@articles = Article.search(params[:search])
 	end
 
+	def auto_suggest
+		if params[:search].present?
+			@articles_suggest = Article.search(params[:search])	
+		else
+			@articles_suggest = Article.none
+		end
+			render partial: 'shared/auto_suggest'
+	end
+	
 	def new
 		@article = Article.new
 		#article.fact_no = 5
@@ -47,7 +56,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def update
-	  @article = Article.find_by(params[:id])
+	  @article = Article.find(params[:id])
 	 
 	  if @article.update(article_params)
 	    redirect_to @article

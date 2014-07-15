@@ -80,7 +80,7 @@ body
 	list-style: none;
 	display: inline-block;
 	padding:0;
-	margin:0
+	margin:0;
 }
 .menu-li
 {
@@ -162,4 +162,24 @@ content: "\00BB";
 #error-explanation ul
 {
 	margin-left:40px;
+}
+#search-ul
+{
+	padding:0;
+	margin:0;
+	list-style: none;
+	background-color:  #fff;
+	color: #000;
+	width: 188px;
+	font-weight: normal;
+}
+#search-ul li
+{
+	padding: 2px 8px;
+	border-bottom: 1px solid #ccc; 
+}
+#search-ul a
+{
+	text-decoration: none;
+	color: #000;
 }
